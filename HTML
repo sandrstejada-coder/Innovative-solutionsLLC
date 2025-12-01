@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Site — Clean Modern One-Page</title>
+  <meta name="description" content="Clean, responsive one-page website — hero, features, portfolio and contact." />
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
+  <!-- Basic styling (embedded for easy copy/paste) -->
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#3b82f6;
+      --glass: rgba(255,255,255,0.04);
+      --radius:12px;
+      --max-width:1100px;
+      --ff: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071029 0%, #071726 100%);
+      color:#e6eef8;
+      font-family:var(--ff);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:32px 16px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{width:100%;max-width:var(--max-width);}
+
+    /* Header / nav */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:32px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .logo{
+      width:44px;height:44px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#60a5fa);
+      display:flex;align-items:center;justify-content:center;font-weight:700;
+      color:white;font-size:18px;box-shadow:0 6px 24px rgba(59,130,246,0.12)
+    }
+    nav{display:flex;gap:16px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+    nav a:hover{color:var(--accent);background:var(--glass)}
+
+    /* mobile menu */
+    .menu-toggle{display:none;background:none;border:0;color:var(--muted);font-size:20px}
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:28px;
+      align-items:center;
+      margin-bottom:40px;
+    }
+    .hero .eyebrow{color:var(--accent);font-weight:700;margin-bottom:12px}
+    .hero h1{margin:0;font-size:clamp(26px,4vw,40px);line-height:1.02}
+    .hero p{color:var(--muted);margin-top:12px}
+    .cta-row{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;
+      background:linear-gradient(90deg,var(--accent),#60a5fa);color:white;border:0;font-weight:700;
+      text-decoration:none;cursor:pointer;box-shadow:0 8px 30px rgba(59,130,246,0.14)
+    }
+    .btn.secondary{background:transparent;color:var(--muted);box-shadow:none;border:1px solid rgba(255,255,255,0.04)}
+
+    /* hero card image */
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius); padding:18px; backdrop-filter: blur(6px);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+    .hero-card img{width:100%;height:220px;object-fit:cover;border-radius:10px}
+
+    /* features */
+    .grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:36px;
+    }
+    .card{
+      background:var(--card);border-radius:12px;padding:18px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    }
+    .card h3{margin:0 0 8px 0}
+    .muted{color:var(--muted)}
+
+    /* portfolio */
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:36px}
+    .thumb{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px;border-radius:10px}
+    .thumb img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+    /* contact */
+    .contact{display:grid;grid-template-columns:1fr 380px;gap:18px;margin-bottom:40px}
+    form{display:flex;flex-direction:column;gap:12px}
+    label{font-weight:600;font-size:13px}
+    input[type="text"],input[type="email"],textarea{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:10px;color:inherit;
+      outline:none;font-size:14px
+    }
+    textarea{min-height:140px;resize:vertical}
+    .small{font-size:13px;color:var(--muted)}
+
+    footer{text-align:center;color:var(--muted);font-size:13px;padding:16px 0;border-top:1px dashed rgba(255,255,255,0.02)}
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid,.portfolio{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+      nav{display:none}
+      .menu-toggle{display:inline-block}
+    }
+    @media (max-width:560px){
+      .grid,.portfolio{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <a class="brand" href="#" aria-label="Homepage">
+        <div class="logo">YS</div>
+        <div>
+          <div style="font-weight:800">YourSite</div>
+          <div class="small muted">Simple • Fast • Modern</div>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" id="menuToggle">☰</button>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <div class="eyebrow">Launch faster</div>
+        <h1 id="hero-heading">A clean website that grows with your business</h1>
+        <p class="muted">Beautiful, responsive, and accessible single-page template. Replace text and images to make it your own — includes sections for features, portfolio, and contact.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="#contact" id="getStarted">Get started</a>
+          <a class="btn secondary" href="#work">See work</a>
+        </div>
+
+        <div style="margin-top:22px" class="muted small">
+          Tip: open this file locally or host on GitHub Pages / Netlify.
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-hidden="false">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Screenshot example" />
+        <h3 style="margin-top:14px;margin-bottom:6px">Proven design patterns</h3>
+        <p class="muted" style="margin:0">Cards, grids and clear CTAs — designed to convert visitors into customers or clients.</p>
+      </aside>
+    </section>
+
+    <section id="features">
+      <div class="grid">
+        <div class="card" role="article" aria-labelledby="f1">
+          <h3 id="f1">Performance-first</h3>
+          <p class="muted">Lightweight code for fast load times and better SEO.</p>
+        </div>
+        <div class="card" role="article" aria-labelledby="f2">
+          <h3 id="f2">Accessible</h3>
+          <p class="muted">Semantic markup and keyboard-friendly navigation built in.</p>
+        </div>
+        <div class="card" role="article" aria-labelledby="f3">
+          <h3 id="f3">Responsive</h3>
+          <p class="muted">Looks great on phones, tablets and desktops.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" aria-labelledby="workHeading">
+      <h2 id="workHeading" style="margin-bottom:12px">Selected work</h2>
+      <div class="portfolio" role="list">
+        <div class="thumb" role="listitem">
+          <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project 1" />
+          <div style="margin-top:8px"><strong>Project One</strong><div class="muted small">Landing page redesign</div></div>
+        </div>
+
+        <div class="thumb" role="listitem">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project 2" />
+          <div style="margin-top:8px"><strong>Project Two</strong><div class="muted small">Brand website</div></div>
+        </div>
+
+        <div class="thumb" role="listitem">
+          <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project 3" />
+          <div style="margin-top:8px"><strong>Project Three</strong><div class="muted small">Web application UI</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" style="margin-bottom:28px">
+      <h2>About</h2>
+      <p class="muted">We build clean digital products with measurable outcomes: faster load times, improved conversion, and a delightful user experience. This template is a starting point — change the colors, fonts, and images to match your brand.</p>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contactHeading">
+      <div>
+        <h2 id="contactHeading">Contact</h2>
+        <p class="muted">Send a quick message — the form below opens your email client with the message pre-filled.</p>
+
+        <form id="contactForm" onsubmit="return handleContact(event)" aria-label="Contact form">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your name" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Brief message..."></textarea>
+          </div>
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn" type="submit">Send message</button>
+            <div id="status" class="muted small" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+
+      <aside class="card" aria-hidden="false">
+        <h3>Visit us</h3>
+        <p class="muted">1234 Example St.<br>City, Country</p>
+        <p style="margin-top:10px"><strong>Email</strong><br><a href="mailto:hello@example.com" style="color:var(--accent)">hello@example.com</a></p>
+        <p style="margin-top:10px" class="muted small">Or use the form — it will open your mail app with the composed message.</p>
+      </aside>
+    </section>
+
+    <footer>
+      © <span id="year"></span> YourSite · Built with ❤️ · <a href="#" style="color:var(--accent)">Privacy</a>
+    </footer>
+  </div>
+
+  <script>
+    // Simple interactive bits: mobile menu toggle + contact handler
+    (function(){
+      const menuToggle = document.getElementById('menuToggle');
+      const wrap = document.querySelector('.wrap');
+      menuToggle.addEventListener('click', () => {
+        const open = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!open));
+        // simple mobile nav toggle by inserting/removing nav (keeps markup simple)
+        const nav = document.querySelector('nav');
+        if(nav.style.display === 'flex'){ nav.style.display = 'none'; }
+        else { nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.position = 'absolute'; nav.style.right = '16px'; nav.style.top = '72px'; nav.style.background = 'rgba(4,8,16,0.9)'; nav.style.padding = '12px'; nav.style.borderRadius = '10px'; }
+      });
+
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Contact: build mailto with encoded body
+      window.handleContact = function(e){
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        if(!name || !email || !message){
+          setStatus('Please fill out all fields', true);
+          return false;
+        }
+        const subject = encodeURIComponent('Website contact from ' + name);
+        let body = 'Name: ' + name + '\\n';
+        body += 'Email: ' + email + '\\n\\n';
+        body += message + '\\n\\n';
+        const mailto = 'mailto:hello@example.com?subject=' + subject + '&body=' + encodeURIComponent(body);
+        // open mail client
+        window.location.href = mailto;
+        setStatus('Opening your email client...', false);
+        return false;
+      }
+
+      function setStatus(msg, isError){
+        const s = document.getElementById('status');
+        s.textContent = msg;
+        s.style.color = isError ? '#ffb4b4' : 'var(--muted)';
+      }
+    })();
+
+  </script>
+</body>
+</html>
